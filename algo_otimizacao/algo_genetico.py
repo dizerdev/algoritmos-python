@@ -25,12 +25,10 @@ problema = mlrose.DiscreteOpt(length=12,
                               maximize=False,
                               max_val=10)
 
-melhor_solucao, melhor_custo = mlrose.simulated_annealing(problema,
-                                                          schedule=mlrose.
-                                                          decay.
-                                                          GeomDecay(
-                                                              init_temp=10000),
-                                                          random_state=1)
+melhor_solucao, melhor_custo = mlrose.genetic_alg(problema,
+                                                  pop_size=500,
+                                                  mutation_prob=0.2,
+                                                  random_state=1)
 melhor_solucao, melhor_custo
 
 imprimir_voos(melhor_solucao)
